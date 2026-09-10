@@ -6,14 +6,14 @@
 - Use the supplied mock-data counts and states only: eight studios, sixteen agents, twenty-four receipts, one starved agent, one nested job, local mode.
 
 ## Experience
-- Create a shared floating app window with a five-item icon rail, wide-screen labels, mobile tabs, tooltips, toast strip, and contextual right rail.
-- Carry the editorial-ledger rhythm across every page: huge figures, grouped paper rows, quiet mono metadata, tactile seal marks, and a single orange irreversible action.
+- Keep `/` as an unframed Editorial Split landing page; create a shared floating app window for every product route with a five-item icon rail, wide-screen labels, mobile tabs, tooltips, and toast strip.
+- Carry the editorial-ledger rhythm across every page without turning Wake into a table: ToastStrip, Greeting, three huge-number StatTiles, weekly PaperCards, then ReceiptCards. Reserve orange exclusively for HeatButton.
 - Keep landing intentionally sparse with one black entry pill and one dark receipt widget on mint.
-- Add requested loading, empty, quiet error, local-mode, and starved states within the component system.
+- Add requested loading, empty, quiet error, local-mode, and starved states: local mode only in ToastStrip and receipt `SIMULATED` labels; starved only on the affected agent.
 
 ## Components
 - Build the exact requested primitives: AppWindow, IconRail, Greeting, StatTile, PaperCard, InkWidget, HeatButton, InkButton, GhostButton, Row, StatusDot, ReceiptCard, Timeline, ChainChecklist, ToastStrip, and EmptyState.
-- Use interactive tabs, notification popover, task checks, checklist modal, agent try controls, job acceptance, and publish stepper without adding backend behavior.
+- Use interactive tabs, notification popover, task checks, checklist modal, agent try controls, job acceptance, and publish stepper without adding backend behavior. The global right rail appears only on Wake and Desk; agent detail gets its own InkWidget.
 
 ## Technical details
 - Define all colors, typography, radii, shadows, and motion as semantic tokens in the global style system.
