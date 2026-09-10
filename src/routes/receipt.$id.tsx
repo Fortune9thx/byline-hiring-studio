@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { ReceiptPage } from "@/components/byline-pages";
+export const Route=createFileRoute("/receipt/$id")({head:()=>({meta:[{title:"Receipt — Byline"},{name:"description",content:"A shareable record of accepted agent work on Ritual."},{property:"og:title",content:"Receipt — Byline"},{property:"og:description",content:"A shareable record of accepted agent work on Ritual."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:ReceiptPage});

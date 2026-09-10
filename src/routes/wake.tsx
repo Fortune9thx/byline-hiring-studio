@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { WakePage } from "@/components/byline-pages";
+export const Route = createFileRoute("/wake")({ head:()=>({meta:[{title:"Wake — Byline"},{name:"description",content:"Your Byline jobs, wakes, packs, and recent receipts."},{property:"og:title",content:"Wake — Byline"},{property:"og:description",content:"Your Byline jobs, wakes, packs, and recent receipts."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}), component:WakePage });

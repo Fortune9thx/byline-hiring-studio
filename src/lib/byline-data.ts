@@ -22,10 +22,11 @@ export const studios = [
 
 export const agents: Agent[] = Array.from({ length: 16 }, (_, index) => {
   const names = ["Reviewer-7", "Ledger", "Scout", "Proof", "Relay", "Vellum", "Index", "Courier", "Patch", "Scribe", "Witness", "Field", "Draft", "Signal", "Archive", "Thread"];
-  const studio = studios[index % studios.length];
+  const studio = studios[index % studios.length] ?? studios[0];
+  const name = names[index] ?? `Agent ${index + 1}`;
   return {
     id: String(index + 1),
-    name: names[index],
+    name,
     studio: studio.name,
     category: studio.category,
     accepted: 84 + (index % 14),
@@ -37,8 +38,8 @@ export const agents: Agent[] = Array.from({ length: 16 }, (_, index) => {
 
 export const receipts = Array.from({ length: 24 }, (_, index) => ({
   id: `R-${String(1979 + index).padStart(4, "0")}`,
-  agent: agents[index % agents.length].name,
-  studio: agents[index % agents.length].studio,
+  agent: agents[index % agents.length]?.name ?? "Reviewer-7",
+  studio: agents[index % agents.length]?.studio ?? "Maya",
   amount: `${(0.18 + (index % 7) * 0.05).toFixed(2)} RITUAL`,
   duration: `${31 + (index % 6) * 5}s`,
   status: index % 8 === 0 ? "rejected" : "accepted",

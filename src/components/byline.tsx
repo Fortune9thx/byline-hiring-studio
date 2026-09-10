@@ -25,14 +25,6 @@ import { Button, type ButtonProps } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import genesisImage from "@/assets/genesis-studio.jpg";
 
-const nav = [
-  { label: "Wake", to: "/wake", icon: Home },
-  { label: "Studios", to: "/studios", icon: Users },
-  { label: "Ladders", to: "/ladders/$class", params: { class: "research" }, icon: Layers3 },
-  { label: "Desk", to: "/desk", icon: BriefcaseBusiness },
-  { label: "Publish", to: "/publish", icon: BookOpen },
-] as const;
-
 export function BrandMark({ inverse = false }: { inverse?: boolean }) {
   return <span className={cn("grid size-9 place-items-center rounded-lg font-display text-xl font-semibold", inverse ? "bg-paper text-ink" : "bg-ink text-paper")}>B</span>;
 }
@@ -89,7 +81,9 @@ export function ChainChecklist({ onClose }: { onClose: () => void }) {
 
 function IconRail() {
   const pathname = useRouterState({ select: state => state.location.pathname });
-  return <><aside className="hidden w-[76px] shrink-0 flex-col items-center gap-3 bg-ink py-5 text-paper md:flex xl:w-[220px] xl:items-stretch xl:px-4"><Link to="/wake" className="mb-5 flex items-center gap-3 xl:px-2"><BrandMark inverse/><span className="hidden font-display text-xl xl:block">Byline</span></Link>{nav.map(({ label, to, params, icon: Icon }) => { const active = pathname.startsWith(to.split("/$")[0]); return <Link key={label} to={to} params={params} title={label} className={cn("flex h-11 items-center justify-center gap-3 rounded-2xl text-paper/55 transition-colors xl:justify-start xl:px-3", active ? "bg-heat text-heat-foreground" : "hover:bg-paper/5 hover:text-paper")}><Icon className="size-4 shrink-0"/><span className="hidden text-sm xl:block">{label}</span></Link>;})}<div className="mt-auto flex items-center justify-center gap-3 xl:justify-start xl:px-2"><span className="grid size-9 place-items-center rounded-full bg-paper/10 font-display">M</span><span className="hidden text-sm xl:block">Maren</span></div></aside><nav className="fixed inset-x-3 bottom-3 z-40 grid grid-cols-5 rounded-[22px] bg-ink p-2 shadow-2xl md:hidden">{nav.map(({ label, to, params, icon: Icon }) => <Link key={label} to={to} params={params} aria-label={label} className="grid h-11 place-items-center rounded-2xl text-paper/65 [&[data-status=active]]:bg-heat [&[data-status=active]]:text-heat-foreground"><Icon className="size-4"/></Link>)}</nav></>;
+  const itemClass = (active: boolean) => cn("flex h-11 items-center justify-center gap-3 rounded-2xl text-paper/55 transition-colors xl:justify-start xl:px-3", active ? "bg-heat text-heat-foreground" : "hover:bg-paper/5 hover:text-paper");
+  const mobileClass = "grid h-11 place-items-center rounded-2xl text-paper/65 [&[data-status=active]]:bg-heat [&[data-status=active]]:text-heat-foreground";
+  return <><aside className="hidden w-[76px] shrink-0 flex-col items-center gap-3 bg-ink py-5 text-paper md:flex xl:w-[220px] xl:items-stretch xl:px-4"><Link to="/wake" className="mb-5 flex items-center gap-3 xl:px-2"><BrandMark inverse/><span className="hidden font-display text-xl xl:block">Byline</span></Link><Link to="/wake" title="Wake" className={itemClass(pathname.startsWith("/wake"))}><Home className="size-4"/><span className="hidden text-sm xl:block">Wake</span></Link><Link to="/studios" title="Studios" className={itemClass(pathname.startsWith("/studios") || pathname.startsWith("/s/"))}><Users className="size-4"/><span className="hidden text-sm xl:block">Studios</span></Link><Link to="/ladders/$class" params={{ class: "research" }} title="Ladders" className={itemClass(pathname.startsWith("/ladders"))}><Layers3 className="size-4"/><span className="hidden text-sm xl:block">Ladders</span></Link><Link to="/desk" title="Desk" className={itemClass(pathname.startsWith("/desk"))}><BriefcaseBusiness className="size-4"/><span className="hidden text-sm xl:block">Desk</span></Link><Link to="/publish" title="Publish" className={itemClass(pathname.startsWith("/publish"))}><BookOpen className="size-4"/><span className="hidden text-sm xl:block">Publish</span></Link><div className="mt-auto flex items-center justify-center gap-3 xl:justify-start xl:px-2"><span className="grid size-9 place-items-center rounded-full bg-paper/10 font-display">M</span><span className="hidden text-sm xl:block">Maren</span></div></aside><nav className="fixed inset-x-3 bottom-3 z-40 grid grid-cols-5 rounded-[22px] bg-ink p-2 shadow-2xl md:hidden"><Link to="/wake" aria-label="Wake" className={mobileClass}><Home className="size-4"/></Link><Link to="/studios" aria-label="Studios" className={mobileClass}><Users className="size-4"/></Link><Link to="/ladders/$class" params={{ class: "research" }} aria-label="Ladders" className={mobileClass}><Layers3 className="size-4"/></Link><Link to="/desk" aria-label="Desk" className={mobileClass}><BriefcaseBusiness className="size-4"/></Link><Link to="/publish" aria-label="Publish" className={mobileClass}><BookOpen className="size-4"/></Link></nav></>;
 }
 
 export function RightRail() {

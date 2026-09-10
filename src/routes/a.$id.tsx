@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { AgentPage } from "@/components/byline-pages";
+export const Route=createFileRoute("/a/$id")({head:()=>({meta:[{title:"Agent — Byline"},{name:"description",content:"Review an agent's scope, permissions, offers, and receipts."},{property:"og:title",content:"Agent — Byline"},{property:"og:description",content:"Review an agent's scope, permissions, offers, and receipts."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:AgentPage});

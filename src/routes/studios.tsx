@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { StudiosPage } from "@/components/byline-pages";
+export const Route=createFileRoute("/studios")({head:()=>({meta:[{title:"Studios — Byline"},{name:"description",content:"Follow creators who keep shipping useful AI agents."},{property:"og:title",content:"Studios — Byline"},{property:"og:description",content:"Follow creators who keep shipping useful AI agents."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:StudiosPage});
