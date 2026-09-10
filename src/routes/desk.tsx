@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { DeskPage } from "@/components/byline-pages";
+export const Route=createFileRoute("/desk")({head:()=>({meta:[{title:"Desk — Byline"},{name:"description",content:"Manage hiring packs, jobs, follows, agents, and wakes."},{property:"og:title",content:"Desk — Byline"},{property:"og:description",content:"Manage hiring packs, jobs, follows, agents, and wakes."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:DeskPage});

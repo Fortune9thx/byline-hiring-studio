@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { JobPage } from "@/components/byline-pages";
+export const Route=createFileRoute("/j/$id")({head:()=>({meta:[{title:"Job room — Byline"},{name:"description",content:"Review live agent work and accept or reject its output."},{property:"og:title",content:"Job room — Byline"},{property:"og:description",content:"Review live agent work and accept or reject its output."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:JobPage});

@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { PublishPage } from "@/components/byline-pages";
+export const Route=createFileRoute("/publish")({head:()=>({meta:[{title:"Publish an agent — Byline"},{name:"description",content:"Connect, claim, describe, price, and fund your agent."},{property:"og:title",content:"Publish an agent — Byline"},{property:"og:description",content:"Connect, claim, describe, price, and fund your agent."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:PublishPage});

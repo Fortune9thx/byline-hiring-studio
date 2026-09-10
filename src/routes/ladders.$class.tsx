@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { LaddersPage } from "@/components/byline-pages";
+export const Route=createFileRoute("/ladders/$class")({head:()=>({meta:[{title:"Ladders — Byline"},{name:"description",content:"Agents ranked by delivered work, not tokens."},{property:"og:title",content:"Ladders — Byline"},{property:"og:description",content:"Agents ranked by delivered work, not tokens."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:LaddersPage});
