@@ -10,33 +10,154 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DeskRouteImport } from './routes/desk'
+import { Route as PublishRouteImport } from './routes/publish'
+import { Route as StudiosRouteImport } from './routes/studios'
+import { Route as WakeRouteImport } from './routes/wake'
+import { Route as AIdRouteImport } from './routes/a.$id'
+import { Route as JIdRouteImport } from './routes/j.$id'
+import { Route as LaddersClassRouteImport } from './routes/ladders.$class'
+import { Route as ReceiptIdRouteImport } from './routes/receipt.$id'
+import { Route as SHandleRouteImport } from './routes/s.$handle'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DeskRoute = DeskRouteImport.update({
+  id: '/desk',
+  path: '/desk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PublishRoute = PublishRouteImport.update({
+  id: '/publish',
+  path: '/publish',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudiosRoute = StudiosRouteImport.update({
+  id: '/studios',
+  path: '/studios',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WakeRoute = WakeRouteImport.update({
+  id: '/wake',
+  path: '/wake',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AIdRoute = AIdRouteImport.update({
+  id: '/a/$id',
+  path: '/a/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JIdRoute = JIdRouteImport.update({
+  id: '/j/$id',
+  path: '/j/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LaddersClassRoute = LaddersClassRouteImport.update({
+  id: '/ladders/$class',
+  path: '/ladders/$class',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReceiptIdRoute = ReceiptIdRouteImport.update({
+  id: '/receipt/$id',
+  path: '/receipt/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SHandleRoute = SHandleRouteImport.update({
+  id: '/s/$handle',
+  path: '/s/$handle',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/desk': typeof DeskRoute
+  '/publish': typeof PublishRoute
+  '/studios': typeof StudiosRoute
+  '/wake': typeof WakeRoute
+  '/a/$id': typeof AIdRoute
+  '/j/$id': typeof JIdRoute
+  '/ladders/$class': typeof LaddersClassRoute
+  '/receipt/$id': typeof ReceiptIdRoute
+  '/s/$handle': typeof SHandleRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/desk': typeof DeskRoute
+  '/publish': typeof PublishRoute
+  '/studios': typeof StudiosRoute
+  '/wake': typeof WakeRoute
+  '/a/$id': typeof AIdRoute
+  '/j/$id': typeof JIdRoute
+  '/ladders/$class': typeof LaddersClassRoute
+  '/receipt/$id': typeof ReceiptIdRoute
+  '/s/$handle': typeof SHandleRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/desk': typeof DeskRoute
+  '/publish': typeof PublishRoute
+  '/studios': typeof StudiosRoute
+  '/wake': typeof WakeRoute
+  '/a/$id': typeof AIdRoute
+  '/j/$id': typeof JIdRoute
+  '/ladders/$class': typeof LaddersClassRoute
+  '/receipt/$id': typeof ReceiptIdRoute
+  '/s/$handle': typeof SHandleRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/desk'
+    | '/publish'
+    | '/studios'
+    | '/wake'
+    | '/a/$id'
+    | '/j/$id'
+    | '/ladders/$class'
+    | '/receipt/$id'
+    | '/s/$handle'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/desk'
+    | '/publish'
+    | '/studios'
+    | '/wake'
+    | '/a/$id'
+    | '/j/$id'
+    | '/ladders/$class'
+    | '/receipt/$id'
+    | '/s/$handle'
+  id:
+    | '__root__'
+    | '/'
+    | '/desk'
+    | '/publish'
+    | '/studios'
+    | '/wake'
+    | '/a/$id'
+    | '/j/$id'
+    | '/ladders/$class'
+    | '/receipt/$id'
+    | '/s/$handle'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  DeskRoute: typeof DeskRoute
+  PublishRoute: typeof PublishRoute
+  StudiosRoute: typeof StudiosRoute
+  WakeRoute: typeof WakeRoute
+  AIdRoute: typeof AIdRoute
+  JIdRoute: typeof JIdRoute
+  LaddersClassRoute: typeof LaddersClassRoute
+  ReceiptIdRoute: typeof ReceiptIdRoute
+  SHandleRoute: typeof SHandleRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +169,83 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/desk': {
+      id: '/desk'
+      path: '/desk'
+      fullPath: '/desk'
+      preLoaderRoute: typeof DeskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/publish': {
+      id: '/publish'
+      path: '/publish'
+      fullPath: '/publish'
+      preLoaderRoute: typeof PublishRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studios': {
+      id: '/studios'
+      path: '/studios'
+      fullPath: '/studios'
+      preLoaderRoute: typeof StudiosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wake': {
+      id: '/wake'
+      path: '/wake'
+      fullPath: '/wake'
+      preLoaderRoute: typeof WakeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/a/$id': {
+      id: '/a/$id'
+      path: '/a/$id'
+      fullPath: '/a/$id'
+      preLoaderRoute: typeof AIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/j/$id': {
+      id: '/j/$id'
+      path: '/j/$id'
+      fullPath: '/j/$id'
+      preLoaderRoute: typeof JIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ladders/$class': {
+      id: '/ladders/$class'
+      path: '/ladders/$class'
+      fullPath: '/ladders/$class'
+      preLoaderRoute: typeof LaddersClassRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/receipt/$id': {
+      id: '/receipt/$id'
+      path: '/receipt/$id'
+      fullPath: '/receipt/$id'
+      preLoaderRoute: typeof ReceiptIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/s/$handle': {
+      id: '/s/$handle'
+      path: '/s/$handle'
+      fullPath: '/s/$handle'
+      preLoaderRoute: typeof SHandleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  DeskRoute: DeskRoute,
+  PublishRoute: PublishRoute,
+  StudiosRoute: StudiosRoute,
+  WakeRoute: WakeRoute,
+  AIdRoute: AIdRoute,
+  JIdRoute: JIdRoute,
+  LaddersClassRoute: LaddersClassRoute,
+  ReceiptIdRoute: ReceiptIdRoute,
+  SHandleRoute: SHandleRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
